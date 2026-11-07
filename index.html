@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>國立高雄科技大學資訊工程系｜碩士在職專班與產業碩士專班招生與完整整合指南</title>
+  <style>
+    :root {
+      --primary: #0f2c59;
+      --primary-light: #1e4b8f;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --teal: #0d9488;
+      --teal-light: #ccfbf1;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --danger: #dc2626;
+      --danger-light: #fee2e2;
+      --shadow: 0 4px 20px -2px rgba(15, 44, 89, 0.08);
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* Top Header / Hero */
+    .hero {
+      background: linear-gradient(135deg, #0a1931 0%, #0f2c59 55%, #1e4b8f 100%);
+      color: #ffffff;
+      padding: 3.5rem 1.5rem 3rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 5px solid var(--accent);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(217,119,6,0.22) 0%, rgba(217,119,6,0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-badge {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #f8fafc;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-badge.highlight {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      max-width: 900px;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.35rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: #b45309;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Quick Highlights Cards */
+    .quick-cards {
+      max-width: 1280px;
+      margin: -1.75rem auto 2rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.25rem;
+      position: relative;
+      z-index: 5;
+    }
+
+    .q-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--primary);
+    }
+
+    .q-card.inservice {
+      border-top-color: var(--primary-light);
+    }
+
+    .q-card.industrial {
+      border-top-color: var(--teal);
+    }
+
+    .q-card.calc {
+      border-top-color: var(--accent);
+    }
+
+    .q-card h3 {
+      font-size: 1.15rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .q-tag {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .q-tag.blue {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .q-tag.teal {
+      background: var(--teal-light);
+      color: #0f766e;
+    }
+
+    .q-tag.amber {
+      background: var(--accent-light);
+      color: #b45309;
+    }
+
+    .q-list {
+      list-style: none;
+      font-size: 0.92rem;
+      color: var(--text);
+      margin-top: 0.75rem;
+    }
+
+    .q-list li {
+      margin-bottom: 0.45rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .q-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    /* Interactive Tuition Calculator Bar */
+    .interactive-panel {
+      max-width: 1280px;
+      margin: 0 auto 2rem;
+      padding: 0 1.5rem;
+    }
+
+    .calc-box {
+      background: linear-gradient(to right, #ffffff, #f8fafc);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .calc-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .calc-header h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      align-items: end;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group select,
+    .form-group input {
+      width: 100%;
+      padding: 0.6rem 0.85rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      background: #fff;
+      color: var(--text);
+    }
+
+    .calc-result {
+      background: #0f2c59;
+      color: #fff;
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .calc-result .res-label {
+      font-size: 0.8rem;
+      color: #cbd5e1;
+    }
+
+    .calc-result .res-value {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #fbbf24;
+    }
+
+    .calc-result .res-note {
+      font-size: 0.78rem;
+      color: #e2e8f0;
+      margin-top: 0.25rem;
+    }
+
+    /* Main Layout */
+    .main-wrapper {
+      max-width: 1280px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 992px) {
+      .main-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        position: static !important;
+      }
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      position: sticky;
+      top: 1.25rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+      max-height: calc(100vh - 2.5rem);
+      overflow-y: auto;
+    }
+
+    .sidebar-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .search-box {
+      margin-bottom: 0.85rem;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.55rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.88rem;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .toc-list a {
+      display: block;
+      padding: 0.45rem 0.65rem;
+      border-radius: 8px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      transition: all 0.15s;
+    }
+
+    .toc-list a:hover {
+      background: #f1f5f9;
+      color: var(--primary-light);
+      transform: translateX(3px);
+    }
+
+    .toc-list a.ch13-link {
+      background: #fffbeb;
+      color: #b45309;
+      border: 1px solid #fde68a;
+      margin-top: 0.35rem;
+    }
+
+    .filter-controls {
+      margin-top: 1rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.84rem;
+    }
+
+    .toggle-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      user-select: none;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Content Area */
+    .content-area {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .chapter-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 1.5rem;
+    }
+
+    .chapter-card.ch13-card {
+      border: 2px solid #f59e0b;
+      background: linear-gradient(to bottom, #fffbeb 0%, #ffffff 120px);
+    }
+
+    .chapter-header {
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .chapter-num {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      margin-bottom: 0.4rem;
+    }
+
+    .chapter-header h2 {
+      font-size: 1.45rem;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .section-block {
+      margin-bottom: 1.65rem;
+    }
+
+    .section-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-block h3 {
+      font-size: 1.15rem;
+      color: var(--primary-light);
+      margin-bottom: 0.75rem;
+      padding-left: 0.75rem;
+      border-left: 4px solid var(--accent);
+    }
+
+    .source-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.18rem 0.6rem;
+      border-radius: 5px;
+      margin: 0.6rem 0 0.4rem;
+      background: #e2e8f0;
+      color: #334155;
+    }
+
+    .source-tag.p1 {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .source-tag.p2 {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .source-tag.p3 {
+      background: #f3e8ff;
+      color: #6b21a8;
+    }
+
+    .source-tag.raw-keep {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px dashed #f59e0b;
+    }
+
+    body.hide-source-tags .source-tag {
+      display: none;
+    }
+
+    .text-box {
+      background: #f8fafc;
+      border-left: 3px solid #cbd5e1;
+      padding: 0.9rem 1.15rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 0.85rem;
+    }
+
+    .text-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .text-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .raw-continuous-box {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      font-size: 0.92rem;
+      white-space: pre-wrap;
+      margin-bottom: 1rem;
+      color: #451a03;
+    }
+
+    ul.styled-list, ol.styled-list {
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    ul.styled-list li, ol.styled-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Tables */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 0.75rem 0 1.25rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.94rem;
+      background: #fff;
+    }
+
+    th, td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    tr:hover td {
+      background: #f1f5f9;
+    }
+
+    .status-pill {
+      display: inline-block;
+      background: var(--danger-light);
+      color: var(--danger);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      margin-top: 0.35rem;
+    }
+
+    .official-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .link-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.15rem;
+      background: #f8fafc;
+      transition: all 0.2s;
+    }
+
+    .link-card:hover {
+      border-color: var(--primary-light);
+      box-shadow: 0 4px 12px rgba(15, 44, 89, 0.08);
+    }
+
+    .link-card a {
+      color: var(--primary-light);
+      font-weight: 800;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .link-card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #0a1931;
+      color: #94a3b8;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    @media print {
+      .sidebar, .interactive-panel, .hero-cta-group {
+        display: none !important;
+      }
+      .main-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .chapter-card {
+        break-inside: avoid;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO ADMISSIONS BANNER -->
+  <header class="hero">
+    <div class="hero-container">
+      <div class="badge-row">
+        <span class="hero-badge highlight">招生專區 ＆ 完整整合指南</span>
+        <span class="hero-badge">國立高雄科技大學 建工校區</span>
+        <span class="hero-badge">電機與資訊學院 資訊工程系</span>
+        <span class="hero-badge">資料範圍：第一輪對話、第二輪對話、第三部分全部文字資料</span>
+      </div>
+      <h1>國立高雄科技大學資訊工程系<br>碩士在職專班與產業碩士專班完整整合資料</h1>
+      <p class="hero-subtitle">
+        兼顧職涯發展或連結產業實務攻讀碩士學位——完整收錄「碩士在職專班（碩專班）」與「產業碩士專班（產碩班）」制度定位、免筆試甄試時程、學分結構、學費補助試算與全十三章原始核對資料。
+      </p>
+      <div class="hero-cta-group">
+        <a href="https://ada.nkust.edu.tw" target="_blank" rel="noopener" class="btn btn-primary">
+          🎓 前往高科大招生資訊網 (ada.nkust.edu.tw)
+        </a>
+        <a href="https://csie.nkust.edu.tw" target="_blank" rel="noopener" class="btn btn-outline">
+          💻 造訪高科大資工系官網 (csie.nkust.edu.tw)
+        </a>
+        <a href="#ch5" class="btn btn-outline">
+          💰 查看學費與企業補助總表
+        </a>
+        <button onclick="window.print()" class="btn btn-outline">
+          🖨️ 列印 / 存為 PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- QUICK ADMISSIONS HIGHLIGHTS -->
+  <section class="quick-cards">
+    <div class="q-card inservice">
+      <h3>
+        <span>💼 碩士在職專班（在職碩班）</span>
+        <span class="q-tag blue">常態秋季招生</span>
+      </h3>
+      <ul class="q-list">
+        <li><strong>適合對象：</strong>已有正職工作（滿 1 年以上年資），欲原職晉升、加薪或跨足資工/AI 領域者</li>
+        <li><strong>上課模式：</strong>平日夜間（或週末），建工校區上課，不影響白天正職工作</li>
+        <li><strong>甄試方式：</strong><strong>免筆試</strong>（書審 30% ＋ 面試 70%，依當年度簡章為準）</li>
+        <li><strong>畢業學分：</strong>最低 38 學分（學分班最高可抵免 9 學分）</li>
+      </ul>
+    </div>
+
+    <div class="q-card industrial">
+      <h3>
+        <span>🏭 產業碩士專班（產碩班）</span>
+        <span class="q-tag teal">產學共育・預聘就業</span>
+      </h3>
+      <ul class="q-list">
+        <li><strong>適合對象：</strong>待業轉職或應屆畢業，希望全職讀碩士並直接鎖定合作企業研發職缺者</li>
+        <li><strong>上課模式：</strong>日間全職修業及企業實習為主（分為春季班 2 月、秋季班 9 月入學）</li>
+        <li><strong>費用優勢：</strong>比照日間部碩士標準收費，享合作企業法定至少 10 萬（或提撥 20 萬）經費補助</li>
+        <li><strong>履約義務：</strong>畢業後須至合作企業服務約定年限（通常 1～2 年）</li>
+      </ul>
+    </div>
+
+    <div class="q-card calc">
+      <h3>
+        <span>📅 關鍵招生時程與核心領域</span>
+        <span class="q-tag amber">免筆試入學</span>
+      </h3>
+      <ul class="q-list">
+        <li><strong>碩專班報名：</strong>每年約 11 月公告簡章、12 月中旬～隔年 2 月下旬報名、3 月面試、4 月初放榜</li>
+        <li><strong>產碩春季班：</strong>12 月辦理考試作業、12 月底公告成績、隔年 1 月中旬放榜、2 月註冊入學</li>
+        <li><strong>研究領域：</strong>商業智慧、資料科學、人工智慧（AI）、金融科技、資安、物聯網、嵌入式系統等</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE TUITION & SUBSIDY CALCULATOR -->
+  <section class="interactive-panel">
+    <div class="calc-box">
+      <div class="calc-header">
+        <h2>🧮 互動式學費、學分與補助快速試算工具（依原文各章節基準切換）</h2>
+        <span style="font-size: 0.85rem; color: var(--text-muted);">※ 切換下方參數可即時對照第二部分與第三部分之估算基準</span>
+      </div>
+      <div class="calc-grid">
+        <div class="form-group">
+          <label for="progSelect">1. 選擇報考學制與資料基準</label>
+          <select id="progSelect" onchange="updateCalc()">
+            <option value="inservice_p2">碩士在職專班（第二部分基準：NT$ 4,333/學分，38學分）</option>
+            <option value="inservice_p3">碩士在職專班（第三部分基準：NT$ 5,000~6,000/學分，36學分）</option>
+            <option value="industrial_p2">產業碩士專班（第二部分基準：NT$ 1,560/學分，日間均攤）</option>
+            <option value="industrial_p3">產業碩士專班（第三部分基準：NT$ 1,599/學分或定額制）</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="creditWaive">2. 入學前碩士學分班抵免（最高 9 學分）</label>
+          <select id="creditWaive" onchange="updateCalc()">
+            <option value="0">0 學分（無抵免，入學後修畢全部學分）</option>
+            <option value="3">抵免 3 學分（1 門課）</option>
+            <option value="6">抵免 6 學分（2 門課）</option>
+            <option value="9">抵免 9 學分（3 門課，過來人省時技巧上限）</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="subsidySelect">3. 企業 / 雇主補助情境</label>
+          <select id="subsidySelect" onchange="updateCalc()">
+            <option value="none">完全自費（不計企業補助）</option>
+            <option value="half">任職公司 / 合作企業補助 50% 學費</option>
+            <option value="full">合作企業全額補助或法定 10 萬～24 萬補助</option>
+          </select>
+        </div>
+        <div class="calc-result">
+          <span class="res-label">兩年（4 學期）預估原始總學雜費：</span>
+          <span class="res-value" id="calcRawTotal">約 NT$ 216,654 元</span>
+          <span class="res-note" id="calcSubNote">學分費 NT$ 164,654 ＋ 4學期學雜費基數約 NT$ 5.1~5.2 萬</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT + SIDEBAR -->
+  <div class="main-wrapper">
+    <!-- STICKY SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-title">
+        <span>📑 全十三章完整目錄</span>
+      </div>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="🔍 搜尋關鍵字（如：抵免、4,333、面試）..." oninput="filterChapters()" />
+      </div>
+      <ul class="toc-list">
+        <li><a href="#ch1">第一章、原始提問與整體介紹</a></li>
+        <li><a href="#ch2">第二章、兩種學制的定位與制度差異</a></li>
+        <li><a href="#ch3">第三章、招生名額、報考資格與甄試方式</a></li>
+        <li><a href="#ch4">第四章、上課模式、修業年限、畢業學分與抵免</a></li>
+        <li><a href="#ch5">第五章、學費、學分費與學雜費完整比較</a></li>
+        <li><a href="#ch6">第六章、學費與學分計算結構拆解</a></li>
+        <li><a href="#ch7">第七章、相關補助、獎助學金與企業福利</a></li>
+        <li><a href="#ch8">第八章、產碩班的補助效益、隱藏成本與風險</a></li>
+        <li><a href="#ch9">第九章、財務與職涯效益評估建議</a></li>
+        <li><a href="#ch10">第十章、報考準備、研究領域與指導教授選擇</a></li>
+        <li><a href="#ch11">第十一章、招生簡章下載與官方查詢管道</a></li>
+        <li><a href="#ch12">第十二章、原始對話中的延伸問題與建議</a></li>
+        <li><a href="#ch13" class="ch13-link">⚠️ 第十三章、原始資料重複或不一致對照</a></li>
+      </ul>
+      <div class="filter-controls">
+        <label class="toggle-label">
+          <input type="checkbox" id="toggleSourceTags" onchange="document.body.classList.toggle('hide-source-tags', this.checked)" />
+          隱藏【第X部分原文】來源標籤
+        </label>
+      </div>
+    </aside>
+
+    <!-- CHAPTERS 1 TO 13 COMPLETE CONTENT -->
+    <main class="content-area" id="chaptersContainer">
+
+      <!-- 第一章 -->
+      <article class="chapter-card" id="ch1">
+        <div class="chapter-header">
+          <span class="chapter-num">Chapter 01</span>
+          <h2>第一章、原始提問與整體介紹</h2>
+        </div>
+
+        <div class="section-block">
+          <h3>1.1 原始使用者提問</h3>
+          <span class="source-tag p1">【第一部分：上方第一輪對話】</span>
+          <div class="text-box">
+            <p><strong>使用者提問：</strong><br>高雄科技大學 資訊工程 在職碩班 產碩班</p>
+          </div>
+
+          <span class="source-tag p2">【第二部分：上方第二輪對話】</span>
+          <div class="text-box">
+            <p><strong>使用者提問：</strong><br>碩士在職專班（碩專班）產業碩士專班（產碩班） 有沒有學費 學分 相關補助的比較</p>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>1.2 學校與學制介紹</h3>
+          <span class="source-tag p1">【第一部分原文】</span>
+          <div class="text-box">
+            <p>國立高雄科技大學 建工校區是高科大「電機與資訊學院 資訊工程系」的所在地。若想在兼顧職涯發展或連結產業實務的前提下攻讀碩士學位，高科大的「碩士在職專班（在職碩班）」與「產業碩士專班（產碩班）」屬於兩種截然不同的培育制度。</p>
+          </div>
+
+          <span class="source-tag p3">【第三部分原文】</span>
+          <div class="text-box">
+            <p>國立高雄科技大學（高科大）資訊工程系針對在職或想精進實務的學生，主要提供「碩士在職專班（碩專班）」，而教育部與企業合作的「產業碩士專班（產碩班）」則依年度審查開班。 [1, 2, 3]</p>
+            <p>以下為您整理高科大資工在職碩班與產碩班的的核心差異、報考指南與修業重點：</p>
+          </div>
+
+          <span class="source-tag p2">【第二部分原文】</span>
+          <div class="text-box">
+            <p>高科大資工系「碩士在職專班（碩專班）」與「產業碩士專班（產碩班）」在財務支出與修業規範上差異極大：碩專班採「在職夜間進修、按在職標準自費繳納學分費」；產碩班則比照「日間部一般碩士生收費標準」，且依法規享有合作企業至少 NT$ 10 萬元以上的經費補助。</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 第二章 -->
+      <article class="chapter-card" id="ch2">
+        <div class="chapter-header">
+          <span class="chapter-num">Chapter 02</span>
+          <h2>第二章、兩種學制的定位與制度差異</h2>
+        </div>
+
+        <div class="section-block">
+          <h3>2.1 資訊工程系「碩士在職專班」（在職碩班）</h3>
+          <span class="source-tag p1">【第一部分原文】</span>
+          <div class="text-box">
+            <p>專為已有正職工作、希望利用下班時間進修的在職人士設計，屬於系所常態招生的學制。</p>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>2.2 「產業碩士專班」（產碩班）</h3>
+          <span class="source-tag p1">【第一部分原文】</span>
+          <div class="text-box">
+            <p>「產業碩士專班」並非夜間在職進修，而是由教育部核定、大學與合作企業共同申辦的「企業定向培育」專案，分為春季班（2 月入學）與秋季班（9 月入學）。</p>
+            <p><strong>制度特色（產學共育、預聘就業）：</strong></p>
+            <ul class="styled-list">
+              <li>由學校結合特定合作企業的人才需求提出申請，學生入學後多以全職研究生身分修課，並由學校教授與業界專家共同指導論文及實務專案。</li>
+              <li>企業補助與履約義務：合作企業通常會提供實習津貼或學雜費/生活費補助；相對地，學生須與企業簽訂培育契約，畢業後直接進入該合作企業服務一定年限（若未履約則須依約返還補助款）。</li>
+            </ul>
+            <p><strong>開班特性（依當期企業需求動態開班）：</strong></p>
+            <ul class="styled-list">
+              <li>產碩班須於每年由校方與合作企業向教育部專案申請，核定後才對外招生。因此並非每年固定以「資訊工程系」單一系所名義開班，而是依當年度合作企業需求開設跨電資、AI、半導體或智慧製造等主題專班。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>2.3 「在職碩班」與「產碩班」比較與選擇建議</h3>
+          <span class="source-tag p1">【第一部分原始比較表】</span>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>比較項目</th>
+                  <th>資訊工程系 碩士在職專班（在職碩班）</th>
+                  <th>產業碩士專班（產碩班）</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>適合對象</strong></td>
+                  <td>目前已有穩定工作，想在原職位晉升、加薪或跨足資工/AI 領域者</td>
+                  <td>待業轉職或應屆畢業，希望邊讀碩士邊鎖定合作企業研發職缺者</td>
+                </tr>
+                <tr>
+                  <td><strong>開班頻率</strong></td>
+                  <td>每年固定常態招生（秋季入學）</td>
+                  <td>依教育部每年核定之合作企業專案開班（春、秋兩季）</td>
+                </tr>
+                <tr>
+                  <td><strong>上課時間</strong></td>
+                  <td>週一至週五夜間</td>
+                  <td>以日間全職修業及企業實習為主</td>
+                </tr>
+                <tr>
+                  <td><strong>工作年資要求</strong></td>
+                  <td>需滿 1 年（含）以上工作年資</td>
+                  <td>無強制年資門檻（惟須符合合作企業面試與綁約條件）</td>
+                </tr>
+                <tr>
+                  <td><strong>畢業綁約義務</strong></td>
+                  <td>無，自由發展職涯</td>
+                  <td>有，畢業後須至合作企業服務約定年限</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>2.4 高科大資工「在職專班」vs.「產碩班」快速對比</h3>
+          <span class="source-tag raw-keep">【第三部分原始連續文字版——保留】</span>
+          <div class="raw-continuous-box">評比項目碩士在職專班（碩專班）產業碩士專班（產碩班）主要定位邊工作邊讀書，適合已在職欲拿學歷與精進者。畢業即就業，由教育部、高科大與合作企業共同培育。學生身份在職人士（通常須具備1年以上工作經驗）。一般生或在職皆可（多數為全職學生）。上課時間平日夜間、週六或週日（不影響白天工作）。日間上課為主（需配合實驗室與企業實習）。開班穩定度每年定期招生（約每年 12 月～隔年 2 月報名）。不定期，需視當年企業合作與教育部審查通過而定。就業綁約無綁約，維持原工作。畢業後須至合作企業服務（通常綁約 2 年）。學費補貼自付學分費與學雜費（依學校規定）。通常由合作企業補助部分或全額學費，甚至提供獎助金。</div>
+
+          <span class="source-tag raw-keep">【第三部分原始表格還原版——保留】</span>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>評比項目</th>
+                  <th>碩士在職專班（碩專班）</th>
+                  <th>產業碩士專班（產碩班）</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>主要定位</strong></td>
+                  <td>邊工作邊讀書，適合已在職欲拿學歷與精進者。</td>
+                  <td>畢業即就業，由教育部、高科大與合作企業共同培育。</td>
+                </tr>
+                <tr>
+                  <td><strong>學生身份</strong></td>
+                  <td>在職人士（通常須具備1年以上工作經驗）。</td>
+                  <td>一般生或在職皆可（多數為全職學生）。</td>
+                </tr>
+                <tr>
+                  <td><strong>上課時間</strong></td>
+                  <td>平日夜間、週六或週日（不影響白天工作）。</td>
+                  <td>日間上課為主（需配合實驗室與企業實習）。</td>
+                </tr>
+                <tr>
+                  <td><strong>開班穩定度</strong></td>
+                  <td>每年定期招生（約每年 12 月～隔年 2 月報名）。</td>
+                  <td>不定期，需視當年企業合作與教育部審查通過而定。</td>
+                </tr>
+                <tr>
+                  <td><strong>就業綁約</strong></td>
+                  <td>無綁約，維持原工作。</td>
+                  <td>畢業後須至合作企業服務（通常綁約 2 年）。</td>
+                </tr>
+                <tr>
+                  <td><strong>學費補貼</strong></td>
+                  <td>自付學分費與學雜費（依學校規定）。</td>
+                  <td>通常由合作企業補助部分或全額學費，甚至提供獎助金。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <!-- 第三章 -->
+      <article class="chapter-card" id="ch3">
+        <div class="chapter-header">
+          <span class="chapter-num">Chapter 03</span>
+          <h2>第三章、招生名額、報考資格與甄試方式</h2>
+        </div>
+
+        <div class="section-block">
+          <h3>3.1 碩士在職專班招生名額與報考資格</h3>
+          <span class="source-tag p1">【第一部分原文】</span>
+          <div class="text-box">
+            <ul class="styled-list">
+              <li><strong>招生名額與分組：</strong>不分組，近年招生名額約 22～23 名（依當學年度簡章為準）。</li>
+              <li><strong>報考資格：</strong>具學士學位（或同等學力），且須具備 1 年（含）以上工作年資（依工作證明書所載日期起算）。</li>
+              <li><strong>核心研究領域：</strong>商業智慧、資料科學、人工智慧（AI）、金融科技、網路程式設計、微處理機、嵌入式系統。</li>
+              <li><strong>甄試項目與計分方式：</strong>
+                <ul class="styled-list">
+                  <li>免筆試，採「書面資料審查」與「面試」二階段/兩項目評分（近年計分比例主要為 書面審查 30% ＋ 面試 70%，實際配比依當年度簡章為準）。</li>
+                  <li>書審準備重點：學經歷證明、自傳、讀書計畫（或研究計畫），以及足資證明專業能力之實務作品、專案成果、證照或專利等。</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>3.2 碩士在職專班招生時程</h3>
+          <span class="source-tag p1">【第一部分原文】</span>
+          <div class="text-box">
+            <p><strong>報名時程（秋季班 9 月入學）：</strong></p>
+            <ul class="styled-list">
+              <li>每年約 12 月中旬至隔年 2 月下旬開放網路報名與書審資料上傳，約 3～4 月舉行面試。</li>
+            </ul>
+          </div>
+
+          <span class="source-tag p3">【第三部分原文】</span>
+          <div class="text-box">
+            <p>高科大資工碩專班（主要位於建工校區）在南部IT與工程業界非常熱門。 [1, 2]</p>
+            <p><strong>招生時程（以115學年度為例參考）：</strong></p>
+            <ul class="styled-list">
+              <li><strong>簡章公告：</strong> 每年 11 月左右。</li>
+              <li><strong>網路報名：</strong> 每年 12 月中旬 至 隔年 2 月下旬。</li>
+              <li><strong>面試時間：</strong> 每年 3 月中旬。</li>
+              <li><strong>放榜時間：</strong> 每年 4 月初。 [1]</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>3.3 甄試方式（免筆試）</h3>
+          <span class="source-tag p3">【第三部分原文】</span>
+          <div class="text-box">
+            <ol class="styled-list">
+              <li>書面審查（工作經歷、自傳、專業表現、研究計畫）。</li>
+              <li>面試（針對工作專長、報考動機與未來論文研究方向問答）。 [1, 2, 3]</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>3.4 產業碩士專班開班與招生現況</h3>
+          <span class="source-tag p3">【第三部分原文】</span>
+          <div class="text-box">
+            <p>產碩班是由學校教授與特定企業（如科技廠、智慧製造大廠）聯合開課。 [1]</p>
+            <ul class="styled-list">
+              <li><strong>開班性質：</strong> 產碩班每年的主題不一定純粹掛名「資工系」，高科大近年多以「智慧製造與工程管理」、「精實生產管理」等跨領域產碩班為主（通常結合資工、機電與管理學院技術）。</li>
+              <li><strong>優勢：</strong> 對於想轉進頂尖半導體或系統大廠的人來說，這是快速拿到碩士學歷＋保證就業的跳板。 [1, 2]</li>
+            </ul>
+          </div>
+
+          <span class="source-tag p1">【第一部分原文】</span>
+          <div class="text-box">
+            <p><strong>近期招生時程（以 116 年度春季班為例）：</strong></p>
+            <ul class="styled-list">
+              <li>高科大招生資訊網已公告 116 年度春季班產業碩士專班招生簡章，於 12 月辦理招生考試作業、12 月 29 日公告總成績、隔年 1 月 14 日放榜，並於 2 月正式註冊入學。</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- 第四章 -->
+      <article class="chapter-card" id="ch4">
+        <div class="chapter-header">
+          <span class="chapter-num">Chapter 04</span>
+          <h2>第四章、上課模式、修業年限、畢業學分與學分抵免</h2>
+        </div>
+
+        <div class="section-block">
+          <h3>4.1 碩士在職專班上課模式與修業規定</h3>
+          <span class="source-tag p1">【第一部分原文】</span>
+          <div class="text-box">
+            <p><strong>上課模式與修業規定：</strong></p>
+            <ul class="styled-list">
+              <li><strong>上課時間與地點：</strong>週一至週五夜間，於建工校區上課。</li>
+              <li><strong>修業年限：</strong>以 1 至 4 年為原則。</li>
+              <li><strong>畢業學分：</strong>近年簡章規範最低畢業學分數為 38 學分（含專題研究與碩士論文等必修項目，依入學年度系所修讀辦法辦理）。</li>
+              <li><strong>學分費標準：</strong>依高科大電資學院碩士在職專班收費標準（每學分約 NT$4,333 元左右，另加計每學期學雜費基數，依入學當年度公告為準）。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>4.2 畢業修業規定</h3>
+          <span class="source-tag p3">【第三部分原文】</span>
+          <div class="text-box">
+            <ul class="styled-list">
+              <li>修業年限為 1 至 4 年。</li>
+              <li>畢業前須完成碩士論文並通過學位考試。</li>
+              <li><strong>學分抵免：</strong> 入學前若有修讀高科大資工開設之碩士學分班課程，學期成績 70 分以上，最高可申請抵免 9 學分（有助於縮短畢業時間）。 [1, 2]</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>4.3 碩士在職專班學分結構（共 38 學分）</h3>
+          <span class="source-tag p2">【第二部分原文】</span>
+          <div class="text-box">
+            <ul class="styled-list">
+              <li><strong>專業必修（14 學分）：</strong>專題討論（一）～（四）共 4 學分、專題研究（一）～（二）共 4 學分、碩士論文 6 學分。</li>
+              <li><strong>專業選修（24 學分）：</strong>至少需修滿 24 學分（8 門課），跨所選修上限通常為 6～9 學分（須經指導教授與系主任同意）。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>4.4 學分班抵免與省錢省時技巧</h3>
+          <span class="source-tag p3">【第三部分原文】</span>
+          <div class="text-box">
+            <p><strong>1. 碩專班的「過來人省錢省時技巧」</strong></p>
+            <ul class="styled-list">
+              <li><strong>學分班抵免：</strong>高科大資工系通常會在夜間或週末開設「碩士學分班」。您可以先去單修幾門課（此時不用交學雜費基數，只交學分費）。考上碩專班後，最高可以申請抵免 9 學分。這不僅可以讓你在入學後少修 3 門課、提早畢業，還能降低開學後的經濟與時間壓力！ [1]</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- 第五章 -->
+      <article class="chapter-card" id="ch5">
+        <div class="chapter-header">
+          <span class="chapter-num">Chapter 05</span>
+          <h2>第五章、學費、學分費與學雜費完整比較</h2>
+        </div>
+
+        <div class="section-block">
+          <h3>5.1 學費制度概述</h3>
+          <span class="source-tag p3">【第三部分原文】</span>
+          <div class="text-box">
+            <p>學費、學分費與補助是這兩個學制最大的差別之一。碩士在職專班（碩專班）屬於「全自費進修」，費用依修讀學分數計算；而產業碩士專班（產碩班）則是「企業與政府高度補助」，甚至會提供生活獎助金，但相對有畢業後的就業綁約。</p>
+            <p>以下為您詳細比較高科大這兩種學制的學費結構與補助制度：</p>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>5.2 學費、學分與相關補助總表比較</h3>
+          <span class="source-tag p2">【第二部分原始比較表】</span>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>比較維度</th>
+                  <th>資訊工程系 碩士在職專班（碩專班）</th>
+                  <th>產業碩士專班（產碩班）</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>收費制度標準</strong></td>
+                  <td>在職專班收費標準（學分費較高，按當學期選課學分數計費 + 學雜費基數）</td>
+                  <td>比照日間部碩士班標準（前兩年採學雜費基數 + 畢業學分費均攤，成本顯著較低）</td>
+                </tr>
+                <tr>
+                  <td><strong>每學分費標準</strong></td>
+                  <td>約 NT$ 4,333 元 / 學分（高科大電資學院碩專班標準）</td>
+                  <td>約 NT$ 1,560 元 / 學分（高科大電資學院日間部碩士標準）</td>
+                </tr>
+                <tr>
+                  <td><strong>每學期學雜費基數</strong></td>
+                  <td>約 NT$ 12,690 ～ 13,096 元 / 學期</td>
+                  <td>約 NT$ 13,096 元 / 學期</td>
+                </tr>
+                <tr>
+                  <td><strong>兩年（4學期）總學雜費估算</strong></td>
+                  <td>約 NT$ 21.5 萬 ～ 22 萬（以修滿 38 學分、2 年畢業估算）</td>
+                  <td>約 NT$ 10.5 萬 ～ 11.1 萬（4 學期總額，每學期約 NT$ 26,356 ～ 27,916 元）</td>
+                </tr>
+                <tr>
+                  <td><strong>最低畢業學分數</strong></td>
+                  <td>38 學分（含專業選修 24 學分、專題討論 4 學分、專題研究 4 學分、碩士論文 6 學分）</td>
+                  <td>30 ～ 38 學分（依當期開班系所規定，通常含必修企業實習或產學專題學分）</td>
+                </tr>
+                <tr>
+                  <td><strong>主要補助來源</strong></td>
+                  <td>雇主在職進修補助（視個人任職公司福利而定）、校內碩專班獎助學金</td>
+                  <td>合作企業專案補助（法定每人至少 NT$ 10 萬元以上）、實習津貼、教育部研究生獎助</td>
+                </tr>
+                <tr>
+                  <td><strong>附加條件與義務</strong></td>
+                  <td>無校外合約綁定（惟若領取自身任職公司進修補助，依各公司內部留任規定辦理）</td>
+                  <td>有履約服務義務（畢業後須進入合作企業服務約定年限，通常為 1～2 年，違約須退還補助款）</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>5.3 高科大碩專班 vs. 產碩班 費用與補助對比</h3>
+          <span class="source-tag raw-keep">【第三部分原始連續文字版——保留】</span>
+          <div class="raw-continuous-box">費用/補助項目碩士在職專班（碩專班）產業碩士專班（產碩班）學費計費模式每學期固定學雜費基數＋按學分數收費
+（修多少課付多少錢）。通常比照日間部碩士班收費
+（大多採定額制或免學分費）。每學分學分費約 NT$ 5,000 ～ 6,000 / 學分
+（資工系、電資學院通常落在這個區間）。比照日間部（約 NT$ 1,599 / 學分） 或由計畫全額打包。每學期學雜費基數約 NT$ 11,000 ～ 14,000 / 學期。比照日間部碩士班（約 NT$ 11,000 ~ 13,000）。預估兩年總學費約 NT$ 20 萬 ～ 25 萬元
+（以畢業需修滿 36 學分計算）。約 NT$ 8 萬 ～ 11 萬元
+（若無企業補助時的原始學費）。合辦企業補助❌ 無任何企業補助（除非您個人公司的福利）。兩大核心補助項目：
+1️⃣ 學費補助：合作企業每學期通常會補助 50% 至 100% 的學費（部分專班學生甚至完全免繳學費）。
+2️⃣ 企業設置費：企業每招收一名學生，必須提撥至少 20 萬元作為專班營運與獎助學金使用。政府津貼與獎學金❌ 幾乎無法申請政府大專院校獎助學金。
+（因認定在職已有固定收入）。兩大來源：
+1️⃣ 專班總收入中會強制撥出 6% 作為學生就學獎補助金。
+2️⃣ 生活助學金：部分半導體或科技大廠會額外提供每月 NT$ 10,000~20,000 研發津貼。代價 / 義務❌ 無任何就業限制，自由度高。⚠️ 畢業後必須至合作企業履約上班（通常綁約 2 年，若違約須賠償企業補助的學費與獎助金）。</div>
+
+          <span class="source-tag raw-keep">【第三部分原始表格還原版——保留】</span>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>費用/補助項目</th>
+                  <th>碩士在職專班（碩專班）</th>
+                  <th>產業碩士專班（產碩班）</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>學費計費模式</strong></td>
+                  <td>每學期固定學雜費基數＋按學分數收費（修多少課付多少錢）。</td>
+                  <td>通常比照日間部碩士班收費（大多採定額制或免學分費）。</td>
+                </tr>
+                <tr>
+                  <td><strong>每學分學分費</strong></td>
+                  <td>約 NT$ 5,000 ～ 6,000 / 學分（資工系、電資學院通常落在這個區間）。</td>
+                  <td>比照日間部（約 NT$ 1,599 / 學分） 或由計畫全額打包。</td>
+                </tr>
+                <tr>
+                  <td><strong>每學期學雜費基數</strong></td>
+                  <td>約 NT$ 11,000 ～ 14,000 / 學期。</td>
+                  <td>比照日間部碩士班（約 NT$ 11,000 ~ 13,000）。</td>
+                </tr>
+                <tr>
+                  <td><strong>預估兩年總學費</strong></td>
+                  <td>約 NT$ 20 萬 ～ 25 萬元（以畢業需修滿 36 學分計算）。</td>
+                  <td>約 NT$ 8 萬 ～ 11 萬元（若無企業補助時的原始學費）。</td>
+                </tr>
+                <tr>
+                  <td><strong>合辦企業補助</strong></td>
+                  <td>❌ 無任何企業補助（除非您個人公司的福利）。</td>
+                  <td>兩大核心補助項目：1️⃣ 學費補助：合作企業每學期通常會補助 50% 至 100% 的學費（部分專班學生甚至完全免繳學費）。2️⃣ 企業設置費：企業每招收一名學生，必須提撥至少 20 萬元作為專班營運與獎助學金使用。</td>
+                </tr>
+                <tr>
+                  <td><strong>政府津貼與獎學金</strong></td>
+                  <td>❌ 幾乎無法申請政府大專院校獎助學金。（因認定在職已有固定收入）。</td>
+                  <td>兩大來源：1️⃣ 專班總收入中會強制撥出 6% 作為學生就學獎補助金。2️⃣ 生活助學金：部分半導體或科技大廠會額外提供每月 NT$ 10,000~20,000 研發津貼。</td>
+                </tr>
+                <tr>
+                  <td><strong>代價 / 義務</strong></td>
+                  <td>❌ 無任何就業限制，自由度高。</td>
+                  <td>⚠️ 畢業後必須至合作企業履約上班（通常綁約 2 年，若違約須賠償企業補助的學費與獎助金）。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <!-- 第六章 -->
+      <article class="chapter-card" id="ch6">
+        <div class="chapter-header">
+          <span class="chapter-num">Chapter 06</span>
+          <h2>第六章、學費與學分計算結構拆解</h2>
+        </div>
+
+        <div class="section-block">
+          <h3>6.1 碩士在職專班（碩專班）：彈性修課、依學分計價</h3>
+          <span class="source-tag p2">【第二部分原文】</span>
+          <div class="text-box">
+            <ul class="styled-list">
+              <li><strong>計費公式：</strong>每學期應繳費用 ＝ （當學期選修學分數 × NT$ 4,333）＋ 學雜費基數。</li>
+              <li><strong>學分結構（共 38 學分）：</strong>
+                <ul class="styled-list">
+                  <li>專業必修（14 學分）：專題討論（一）～（四）共 4 學分、專題研究（一）～（二）共 4 學分、碩士論文 6 學分。</li>
+                  <li>專業選修（24 學分）：至少需修滿 24 學分（8 門課），跨所選修上限通常為 6～9 學分（須經指導教授與系主任同意）。</li>
+                </ul>
+              </li>
+              <li><strong>總花費試算：</strong>38 學分 × NT$ 4,333 ＝ NT$ 164,654 元（學分費總計）；若於 2 年（4 學期）內修畢，加上 4 學期的學雜費基數（約 NT$ 5.1 萬～5.2 萬），讀完總學雜費約落在 NT$ 21.6 萬元左右。若延畢至第 3 年且已修滿學分，延修期間每學期仍須繳納學雜費基數。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>6.2 產業碩士專班（產碩班）：日間部收費、定額均攤</h3>
+          <span class="source-tag p2">【第二部分原文】</span>
+          <div class="text-box">
+            <ul class="styled-list">
+              <li><strong>計費公式：</strong>比照高科大日間部碩士班，前兩年（第 1 至第 4 學期）每學期應繳學雜費 ＝ （最低畢業學分數 × 學分費 NT$ 1,560 ÷ 4 學期）＋ 學雜費基數 NT$ 13,096。</li>
+              <li><strong>總花費試算：</strong>以高科大資工系日間碩士班 34～38 學分標準計算，每學期學雜費總額固定約 NT$ 26,356 ～ 27,916 元，兩年 4 學期總計約 NT$ 10.5 萬 ～ 11.1 萬元（僅約碩專班的一半）。多修習日間部學分不額外加收學分費；若第 3 年起延畢，僅須繳交學雜費基數。</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- 第七章 -->
+      <article class="chapter-card" id="ch7">
+        <div class="chapter-header">
+          <span class="chapter-num">Chapter 07</span>
+          <h2>第七章、相關補助、獎助學金與企業福利</h2>
+        </div>
+
+        <div class="section-block">
+          <h3>7.1 碩士在職專班（碩專班）可運用之補助</h3>
+          <span class="source-tag p2">【第二部分原文】</span>
+          <div class="text-box">
+            <ul class="styled-list">
+              <li><strong>企業內部「在職進修補助」：</strong>碩專班學生多為全職工程師或科技業從業人員。多數中大型科技廠（如半導體封測、IC 測試、系統廠或自動化設備商）設有「員工在職進修學費補助辦法」，只要進修科系與職務相關（如韌體研發、自動化系統、AI 資料分析），憑當學期成績單（通常要求達 80 分或 B 以上）與學費收據，每學期可向公司申請 50% 至全額學費補助。</li>
+              <li><strong>高科大校內「碩士在職專班學生就學獎補助」：</strong>依據《國立高雄科技大學碩士在職專班經費管理要點》，學校會從碩專班學雜費總收入中固定提撥 6% 作為「學生就學獎補助學金」，用於獎勵碩專班優秀學生、補助發表國內外期刊或國際研討會論文費用。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>7.2 產業碩士專班（產碩班）可獲得之補助</h3>
+          <span class="source-tag p2">【第二部分原文】</span>
+          <div class="text-box">
+            <ul class="styled-list">
+              <li><strong>合作企業法定培訓補助（至少 NT$ 10 萬元以上）：</strong>依據教育部《產業碩士專班計畫》規定，合作企業於兩年計畫執行期間，補助每名學生的金額不得低於新臺幣 10 萬元。實務上，許多半導體、電資合作企業提供的補助落在 NT$ 12 萬 ～ 24 萬元之間（按月發放生活津貼，或每學期直接全額補助學雜費＋研究津貼）。換算下來，企業給的補助款幾乎已完全涵蓋甚至超過兩年的學雜費總支出。</li>
+              <li><strong>企業實習津貼：</strong>產碩班寒暑假及碩二期間赴合作企業實習時，企業通常會依約另外支給實習薪資或津貼。</li>
+              <li><strong>校內外研究生獎助學金：</strong>因具備全職日間部研究生身分，可兼任學校教學助理（TA）、國科會/產學合作計畫兼任研究助理（RA）領取每月研究津貼，亦可申請高科大創新創業發展處之「研究生激勵補助」（每案最高 8 萬元）。</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- 第八章 -->
+      <article class="chapter-card" id="ch8">
+        <div class="chapter-header">
+          <span class="chapter-num">Chapter 08</span>
+          <h2>第八章、產碩班的補助效益、隱藏成本與履約風險</h2>
+        </div>
+
+        <div class="section-block">
+          <h3>8.1 產碩班的「高CP值」與隱藏成本</h3>
+          <span class="source-tag p3">【第三部分原文】</span>
+          <div class="text-box">
+            <p><strong>2. 產碩班的「高CP值」與隱藏成本</strong></p>
+            <ul class="styled-list">
+              <li>產碩班對學生而言是「畢業即就業」且「低學費甚至免學費」的超級跳板。企業撥款的 20 萬元會用來補貼學生的材料、設備、實驗室維運以及個人的獎助金。</li>
+              <li><strong>隱藏成本：</strong>如果讀到一半發現志趣不合想休學、退學，或是畢業後不想去該企業上班，會面臨依合約賠償所有已領取之補助款與學費的風險。 [1]</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- 第九章 -->
+      <article class="chapter-card" id="ch9">
+        <div class="chapter-header">
+          <span class="chapter-num">Chapter 09</span>
+          <h2>第九章、財務與職涯效益評估建議</h2>
+        </div>
+
+        <div class="section-block">
+          <span class="source-tag p2">【第二部分原文】</span>
+          <div class="text-box">
+            <ul class="styled-list">
+              <li><strong>選擇「碩專班」更划算的情境：</strong>若目前已有正職工作，留職全薪進修的財務效益遠高於離職。即使完全自費（兩年約 22 萬），只要在職期間保有原本的年薪與年資，且無須受限於產碩班合作企業的名單與綁約條款，畢業後無論在原公司升遷或跳槽議價，自由度與整體財務回報率都較高。</li>
+              <li><strong>選擇「產碩班」更划算的情境：</strong>若目前待業中，或正打算離職全心投入新技術領域，產碩班能以「日間部低學費 ＋ 企業至少 10 萬補助」達到接近「零學費讀完碩士、畢業直接無縫入職合作企業」的效果。</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- 第十章 -->
+      <article class="chapter-card" id="ch10">
+        <div class="chapter-header">
+          <span class="chapter-num">Chapter 10</span>
+          <h2>第十章、報考準備、研究領域與指導教授選擇</h2>
+        </div>
+
+        <div class="section-block">
+          <h3>10.1 給您的報考與準備建議 💡</h3>
+          <span class="source-tag p3">【第三部分原文】</span>
+          <div class="text-box">
+            <ol class="styled-list">
+              <li><strong>鎖定指導教授專長：</strong> 高科大資工系的指導教授研究涵蓋 AI、大數據、資安、物聯網、影像處理等。建議在寫書審的研究計畫前，先到 高科大資工系官方網站 了解教授們的研究領域，在計畫書與面試中展現「你的工作實務如何與教授的專長結合」，錄取機率會大幅提升。</li>
+              <li><strong>留意工作年資證明：</strong> 報考碩專班必須繳交勞保明細或服務證明書，年資計算以專職為主（義務役不計）。</li>
+              <li><strong>即時追蹤簡章：</strong> 無論是碩專班還是最新的春/秋季產碩班，最新簡章一律由 高科大招生資訊網 統一公告。 [1, 2, 3, 4, 5]</li>
+            </ol>
+          </div>
+        </div>
+      </article>
+
+      <!-- 第十一章 -->
+      <article class="chapter-card" id="ch11">
+        <div class="chapter-header">
+          <span class="chapter-num">Chapter 11</span>
+          <h2>第十一章、招生簡章下載與官方查詢管道</h2>
+        </div>
+
+        <div class="section-block">
+          <span class="source-tag p1">【第一部分原文】</span>
+          <div class="official-links">
+            <div class="link-card">
+              <p><strong>1. 高科大招生資訊網（<a href="https://ada.nkust.edu.tw" target="_blank" rel="noopener">https://ada.nkust.edu.tw</a>）</strong></p>
+              <ul class="styled-list" style="margin-top: 0.5rem;">
+                <li>點選「報名及報到專區」或「最新消息」，即可免費下載最新學年度之《碩士在職專班招生簡章》與《產業碩士專班招生簡章》（簡章均採免費電子檔下載，不另販售紙本）。</li>
+              </ul>
+            </div>
+            <div class="link-card">
+              <p><strong>2. 高科大資訊工程系官網（<a href="https://csie.nkust.edu.tw" target="_blank" rel="noopener">https://csie.nkust.edu.tw</a>）</strong></p>
+              <ul class="styled-list" style="margin-top: 0.5rem;">
+                <li>建議報考前先瀏覽系網「師資介紹」與「實驗室網站」，了解各教授在嵌入式系統、網路通訊、資料探勘或深度學習等領域的研究方向，有助於撰寫書審研究計畫及準備面試。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 第十二章 -->
+      <article class="chapter-card" id="ch12">
+        <div class="chapter-header">
+          <span class="chapter-num">Chapter 12</span>
+          <h2>第十二章、原始對話中的延伸問題與建議</h2>
+        </div>
+
+        <div class="section-block">
+          <h3>12.1 第一部分原文</h3>
+          <div class="text-box">
+            <p>您目前是已經在職、打算利用夜間進修，還是考慮透過產學合作專案轉換跑道呢？若有特定的研究方向（如韌體開發、AI 應用或資料科學），也可以進一步為您整理準備書審與面試的重點。</p>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>12.2 第二部分原文</h3>
+          <div class="text-box">
+            <p>延伸問題建議：想了解資工系碩專班如何挑選指導教授與實驗室嗎？（請幫我整理高科大資工系碩士在職專班的教授研究領域，以及在職生挑選指導教授與實驗室的建議。）</p>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>12.3 第三部分原文（第一組）</h3>
+          <div class="text-box">
+            <p>請問您目前是已經在職想利用公餘時間進修，還是希望能全職就讀並直接媒合企業就業呢？<br>若您有特定的研究領域（如：AI、資安、網通），我可以進一步幫您查詢相關教授的研究方向。</p>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>12.4 第三部分原文（第二組）</h3>
+          <div class="text-box">
+            <p>您目前是否有特定的預算考量？或者是否有興趣了解高科大資工系在職專班最新的學分費確切金額與畢業學分門檻呢？</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 第十三章 -->
+      <article class="chapter-card ch13-card" id="ch13">
+        <div class="chapter-header">
+          <span class="chapter-num">Chapter 13 ・ 核對索引</span>
+          <h2>第十三章、原始資料互相重複或不一致的內容對照</h2>
+          <p style="font-size: 0.92rem; color: #92400e; margin-top: 0.35rem; font-weight: 600;">
+            本章為額外整理的核對索引，不取代、不刪減前十二章任何文字。
+          </p>
+        </div>
+
+        <div class="section-block">
+          <h3>13.1 每學分費用</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>資料來源</th>
+                  <th>碩專班</th>
+                  <th>產碩班</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>第一部分</strong></td>
+                  <td>約 NT$4,333</td>
+                  <td>未列明單價</td>
+                </tr>
+                <tr>
+                  <td><strong>第二部分</strong></td>
+                  <td>約 NT$4,333</td>
+                  <td>約 NT$1,560</td>
+                </tr>
+                <tr>
+                  <td><strong>第三部分</strong></td>
+                  <td>約 NT$5,000～6,000</td>
+                  <td>約 NT$1,599</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <span class="status-pill">狀態：數字不一致，未查證官方最新收費公告。</span>
+        </div>
+
+        <div class="section-block">
+          <h3>13.2 畢業學分數</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>資料來源</th>
+                  <th>內容</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>第一部分</strong></td>
+                  <td>碩專班最低 38 學分</td>
+                </tr>
+                <tr>
+                  <td><strong>第二部分</strong></td>
+                  <td>碩專班 38 學分，產碩班 30～38 學分</td>
+                </tr>
+                <tr>
+                  <td><strong>第三部分</strong></td>
+                  <td>碩專班兩年費用估算採 36 學分</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <span class="status-pill">狀態：存在不同的估算基準，不能直接認定為同一學年度的正式畢業規定。</span>
+        </div>
+
+        <div class="section-block">
+          <h3>13.3 兩年學費總額</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>資料來源</th>
+                  <th>碩專班</th>
+                  <th>產碩班</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>第二部分</strong></td>
+                  <td>約 NT$21.5～22 萬</td>
+                  <td>約 NT$10.5～11.1 萬</td>
+                </tr>
+                <tr>
+                  <td><strong>第三部分</strong></td>
+                  <td>約 NT$20～25 萬</td>
+                  <td>約 NT$8～11 萬</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <span class="status-pill">狀態：估算範圍不同，原文全部保留。</span>
+        </div>
+
+        <div class="section-block">
+          <h3>13.4 產碩班企業補助</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>資料來源</th>
+                  <th>原文重點</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>第一部分</strong></td>
+                  <td>合作企業通常會提供實習津貼或學雜費/生活費補助</td>
+                </tr>
+                <tr>
+                  <td><strong>第二部分</strong></td>
+                  <td>合作企業於兩年計畫執行期間，每人補助金額不得低於 NT$10 萬；實務上 NT$12～24 萬</td>
+                </tr>
+                <tr>
+                  <td><strong>第三部分</strong></td>
+                  <td>企業每招收一名學生，必須提撥至少 NT$20 萬元作為專班營運與獎助學金使用</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <span class="status-pill">狀態：10 萬與 20 萬可能涉及不同的計畫定義、費用用途或規定，但不能在未查證前直接認定兩者相同。</span>
+        </div>
+
+        <div class="section-block">
+          <h3>13.5 6% 學生就學獎補助金</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>資料來源</th>
+                  <th>原文重點</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>第二部分</strong></td>
+                  <td>高科大碩士在職專班學雜費總收入提撥 6% 作為學生就學獎補助學金</td>
+                </tr>
+                <tr>
+                  <td><strong>第三部分</strong></td>
+                  <td>在產碩班政府津貼與獎學金欄位，記載專班總收入強制撥出 6% 作為學生就學獎補助金</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <span class="status-pill">狀態：原始資料對適用學制的歸屬不同，需查證規定。</span>
+        </div>
+
+        <div class="section-block">
+          <h3>13.6 產碩班履約期限</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>資料來源</th>
+                  <th>原文重點</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>第一部分</strong></td>
+                  <td>畢業後須至合作企業服務約定年限</td>
+                </tr>
+                <tr>
+                  <td><strong>第二部分</strong></td>
+                  <td>通常為 1～2 年</td>
+                </tr>
+                <tr>
+                  <td><strong>第三部分</strong></td>
+                  <td>通常綁約 2 年</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <span class="status-pill">狀態：最終仍應以實際簽訂的培育契約為準。</span>
+        </div>
+
+        <div class="section-block">
+          <h3>13.7 上課時間</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>資料來源</th>
+                  <th>碩專班</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>第一部分</strong></td>
+                  <td>週一至週五夜間，建工校區</td>
+                </tr>
+                <tr>
+                  <td><strong>第三部分</strong></td>
+                  <td>平日夜間、週六或週日</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <span class="status-pill">狀態：不同文字版本提及的上課時間不完全相同，應以實際課表確認。</span>
+        </div>
+
+        <div class="section-block">
+          <h3>13.8 完整性與使用注意事項</h3>
+          <div class="text-box">
+            <ol class="styled-list">
+              <li>前十二章為原始內容的主題式整合，保留不同來源的說法及重複資訊。</li>
+              <li>第十三章只彙整數字差異、重複主題及需要核對的部分，並未以任何一個版本覆蓋其他版本。</li>
+              <li>所有招生時程、畢業學分、學費、抵免條件、政府補助及企業契約相關內容，均應依實際招生學年度及專班計畫核定文件查證。</li>
+              <li>原始資料的 [1]、[2]、[3]、[4]、[5] 引用標記已保留，但原文未附對應文獻清單，不宜視為已完成來源驗證。</li>
+            </ol>
+            <p style="margin-top: 0.75rem; font-weight: 800; color: var(--primary);">文件結束。</p>
+          </div>
+        </div>
+      </article>
+
+    </main>
+  </div>
+
+  <footer>
+    <p><strong>國立高雄科技大學 資訊工程系（建工校區）</strong>｜碩士在職專班與產業碩士專班完整整合資料</p>
+    <p style="margin-top: 0.4rem;">官方查詢管道：<a href="https://ada.nkust.edu.tw" target="_blank" rel="noopener" style="color: #fbbf24;">高科大招生資訊網 (ada.nkust.edu.tw)</a> ｜ <a href="https://csie.nkust.edu.tw" target="_blank" rel="noopener" style="color: #fbbf24;">高科大資工系官網 (csie.nkust.edu.tw)</a></p>
+  </footer>
+
+  <script>
+    function updateCalc() {
+      const prog = document.getElementById('progSelect').value;
+      const waive = parseInt(document.getElementById('creditWaive').value, 10);
+      const sub = document.getElementById('subsidySelect').value;
+      const rawTotalEl = document.getElementById('calcRawTotal');
+      const noteEl = document.getElementById('calcSubNote');
+
+      let totalMin = 0;
+      let totalMax = 0;
+      let desc = "";
+
+      if (prog === 'inservice_p2') {
+        const effectiveCredits = 38 - waive;
+        const creditCost = effectiveCredits * 4333;
+        const baseMin = 12690 * 4;
+        const baseMax = 13096 * 4;
+        totalMin = creditCost + baseMin;
+        totalMax = creditCost + baseMax;
+        desc = `入學後修習 ${effectiveCredits} 學分（學分費 NT$ ${creditCost.toLocaleString()}）＋ 4學期學雜費基數`;
+      } else if (prog === 'inservice_p3') {
+        const effectiveCredits = 36 - waive;
+        const creditMin = effectiveCredits * 5000;
+        const creditMax = effectiveCredits * 6000;
+        totalMin = creditMin + 11000 * 4;
+        totalMax = creditMax + 14000 * 4;
+        desc = `以 36 學分扣抵 ${waive} 學分後（${effectiveCredits} 學分）＋ 4學期學雜費基數估算`;
+      } else if (prog === 'industrial_p2') {
+        totalMin = 26356 * 4;
+        totalMax = 27916 * 4;
+        desc = `日間部收費定額均攤（每學期約 NT$ 26,356 ~ 27,916，共 4 學期）`;
+      } else if (prog === 'industrial_p3') {
+        totalMin = 80000;
+        totalMax = 110000;
+        desc = `第三部分原始學費預估區間（無企業補助時之兩年總額）`;
+      }
+
+      if (sub === 'half') {
+        totalMin = Math.round(totalMin * 0.5);
+        totalMax = Math.round(totalMax * 0.5);
+        desc += "｜已計入 50% 學費補助";
+      } else if (sub === 'full') {
+        desc += "｜企業全額補助或法定至少 10 萬～24 萬補助（實質自付趨近 0 元）";
+        rawTotalEl.textContent = `自付約 NT$ 0 元（原始約 ${Math.round(totalMin/10000*10)/10}～${Math.round(totalMax/10000*10)/10} 萬）`;
+        noteEl.textContent = desc;
+        return;
+      }
+
+      rawTotalEl.textContent = `約 NT$ ${totalMin.toLocaleString()} ～ ${totalMax.toLocaleString()} 元`;
+      noteEl.textContent = desc;
+    }
+
+    function filterChapters() {
+      const q = document.getElementById('searchInput').value.trim().toLowerCase();
+      const cards = document.querySelectorAll('.chapter-card');
+      cards.forEach(card => {
+        if (!q || card.innerText.toLowerCase().includes(q)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
